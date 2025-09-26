@@ -1,0 +1,45 @@
+# Quiz Game in Python
+
+questions = [
+    {
+        "question": "What is the capital of France?",
+        "options": ["A) Berlin", "B) Madrid", "C) Paris", "D) Rome"],
+        "answer": "C"
+    },
+    {
+        "question": "Which language is used for web apps?",
+        "options": ["A) Python", "B) JavaScript", "C) HTML", "D) All of the above"],
+        "answer": "D"
+    },
+    {
+        "question": "Who developed Python?",
+        "options": ["A) Dennis Ritchie", "B) James Gosling", "C) Guido van Rossum", "D) Bjarne Stroustrup"],
+        "answer": "C"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "options": ["A) Earth", "B) Venus", "C) Mars", "D) Jupiter"],
+        "answer": "C"
+    }
+]
+
+def run_quiz():
+    score = 0
+    print("🎉 Welcome to the Quiz Game! 🎉\n")
+
+    for i, q in enumerate(questions, start=1):
+        print(f"Q{i}: {q['question']}")
+        for option in q["options"]:
+            print(option)
+        answer = input("Your answer (A/B/C/D): ").upper()
+
+        if answer == q["answer"]:
+            print("✅ Correct!\n")
+            score += 1
+        else:
+            print(f"❌ Wrong! The correct answer was {q['answer']}.\n")
+
+    print(f"🏆 You scored {score}/{len(questions)}")
+
+if __name__ == "__main__":
+    run_quiz()
